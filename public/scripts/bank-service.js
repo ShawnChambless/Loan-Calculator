@@ -1,7 +1,12 @@
 var app = angular.module('LoanCalculator');
 
-app.service('loanService', function($http, $q) {
+app.service('bankService', function($http) {
 
-
+    this.getInterest = function() {
+        return $http({
+            method: 'GET',
+            url: '/interest_rate'
+        });
+    };
 
 });
